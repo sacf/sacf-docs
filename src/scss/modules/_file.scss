@@ -1,0 +1,72 @@
+#file-nav {
+	&-box {
+		left: 0;
+		right: auto;
+		top: 0;
+		background-color: #fff;
+		width: 100%;
+		border-bottom: 1px solid $color-gray-lighter;
+		z-index: 1;
+
+	}
+	&-options {
+		margin: 0 auto;
+		padding: 5px $standard-padding;
+		width: 100%;
+		max-width: $max-content-width;
+	}
+	&-container {
+		display: none;
+	}
+}
+
+h1.file {
+	margin-top: 50px;
+	& > a {
+		display: none;
+	}
+}
+
+.to-top {
+	display: none;
+}
+
+a.anchor {
+	position: relative;
+	top: -40px;
+}
+
+div.class {
+	border: none;
+	padding-left: 0;
+}
+
+div.property,
+div.method,
+div.function,
+div.constant {
+	border: none;
+	padding: 0 0 5px;
+
+	.highlight {
+		color: $color-blue;
+	}
+
+	.code-tabs{
+		&>strong{
+			display:inline-block;
+			margin-top: 10px;
+		}
+	}
+}
+
+.property-info, .function-info{
+	display: table;
+	dt {
+		padding-right: $standard-padding;
+	}
+	dt,
+	dd {
+		display: table-cell;
+	}
+}

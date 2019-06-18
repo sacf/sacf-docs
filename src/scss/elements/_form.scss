@@ -1,0 +1,149 @@
+$input-background-color: $color-gray-lightest;
+$input-color: $color-gray-darkest;
+
+label {
+	display: block;
+	width: 100%;
+}
+
+textarea {
+	display: block;
+	width: 100%;
+	font-family: $body-font;
+	color: $input-color;
+	min-height: 150px;
+	border: 1px solid $input-color;
+	padding: 0.3em;
+	margin: 1em 0;
+	background-color: $input-background-color;
+
+	&:focus {
+		border-color: $color-focus;
+	}
+}
+
+input[type="color"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+%pseudo-input {
+	background-color: $input-background-color;
+	display: block;
+	border: none;
+	width: 100%;
+
+	@include typo(16);
+	padding: 0 1em;
+	margin: 0.5em 0;
+	outline: none;
+	color: $input-color;
+
+	&:active,
+	&:focus {
+		border: 1px solid $color-focus;
+	}
+
+	&::-webkit-input-placeholder {
+		color: $color-gray-dark;
+		opacity: 0.5;
+	}
+
+	&::-moz-placeholder {
+		color: $color-gray-dark;
+		opacity: 0.5;
+	}
+
+	&:-ms-input-placeholder {
+		color: $color-gray-dark;
+		opacity: 0.5;
+	}
+
+	&:-moz-placeholder {
+		color: $color-gray-dark;
+		opacity: 0.5;
+	}
+}
+
+input {
+	&[type="radio"],
+	&[type="checkbox"] {
+		display: none;
+		cursor: pointer;
+
+		+ span {
+			display: inline-block;
+			position: relative;
+			width: 1em;
+			height: 1em;
+			position: relative;
+			top: 0.1em;
+			border: 1px solid $input-color;
+			display: inline-block;
+			cursor: pointer;
+			background-color: transparent;
+
+			&:after {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				opacity: 0;
+
+				content: " ";
+				width: 1em;
+				height: 1em;
+				display: block;
+
+				background-image: url(../img/checkbox.svg);
+				background-position: center center;
+				background-repeat: no-repeat;
+				background-size: auto 1em;
+				background-size: contain;
+			}
+		}
+
+		&:checked {
+			+ span:after {
+				opacity: 1;
+			}
+		}
+
+		&[disabled] + span {
+			opacity: 0.33;
+		}
+	}
+
+	&[type="radio"] {
+		+ span {
+			border-radius: 50%;
+
+			&:after {
+				content: none;
+				display: none;
+				opacity: 0;
+			}
+		}
+
+		&:checked {
+			+ span {
+				background: radial-gradient(
+					ellipse at center,
+					$input-color 0%,
+					$input-color 40%,
+					transparent 45%,
+					transparent 100%
+				);
+			}
+		}
+	}
+}

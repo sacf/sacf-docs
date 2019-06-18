@@ -1,0 +1,15 @@
+#titlearea{
+	border-bottom: none;
+}
+
+div.header{
+	background-image: none;
+	background-color: $color-gray-lightest;
+	border-bottom: 1px solid $color-gray-light;
+	&title{
+		max-width: $max-width;
+		margin: 0 auto;
+	}
+
+}
+

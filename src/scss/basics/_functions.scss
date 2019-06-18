@@ -1,0 +1,8 @@
+/**
+ * strip units from numbers
+ * @param  {cssunit} $number the number in question
+ * @return {number}         unitless representation
+ */
+@function strip-units($number) {
+	@return $number / ($number * 0 + 1);
+}

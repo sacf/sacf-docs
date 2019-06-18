@@ -1,0 +1,32 @@
+#sidebar {
+	padding: $standard-padding;
+	width: 100%;
+
+	a {
+		color: $color-text;
+		&:hover {
+			color: $color-blue;
+		}
+	}
+
+	&-nav {
+		width: 100%;
+		h3{
+			cursor: pointer;
+
+			&:first-child {
+				margin-top: 1.5em;		
+			}
+
+			&:hover {
+				color: $color-blue;
+			}
+		}
+	}
+
+	li{
+		span.file{
+			display: inline-block;
+		}
+	}
+}

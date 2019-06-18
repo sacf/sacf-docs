@@ -1,0 +1,58 @@
+/**
+ * insert svg icon as pseudo element :before
+ * @param  {string} $name  name of the icon = filename without extension
+ * @param  {cssunit} $w:1em width in px, em, rem, …
+ */
+@mixin svg-icon($name, $w:1em) {
+	&:before {
+		position: relative;
+		content: " ";
+		width: $w;
+		height: 1em;
+		display: inline-block;
+		vertical-align: middle;
+		top: -1px;
+		margin-right: 0.3em;
+		background-image: url(../img/#{$name}.svg);
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: auto $w;
+		background-size: contain;
+	}
+}
+
+/**
+ * set font size and line height
+ * @param  {number} $fs			font size in pixels
+ * @param  {number} $lh: auto   line height in pixels
+ */
+@mixin typo($fs: 16, $lh: auto) {
+	// in case we're not unitless
+	$fs: strip-units($fs);
+
+	font-size: $fs + px; // fallback for older browsers
+	font-size: ((1 / 16) * $fs) + rem; // 1rem ~16px if not changed by user stylesheet
+
+	@if $lh == auto {
+		line-height: $line-height-base;
+	} @else {
+		// line height should be a unitless fraction of the font size
+		line-height: strip-units($lh / $fs);
+	}
+}
+
+/**
+ * UTILITY MIXINS
+ */
+
+@mixin body-font() {
+	font-family: $body-font;
+	font-weight: normal;
+	font-style: normal;
+}
+
+@mixin head-font() {
+	font-family: $head-font;
+	font-weight: bold;
+	font-style: normal;
+}

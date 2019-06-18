@@ -1,0 +1,87 @@
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	width: 100%;
+	padding: 0;
+	margin: 0;
+
+	html, body{
+		height: auto; 
+	}
+}
+
+html#frameset,
+html#frameset>body{
+	height: 100%;
+}
+
+#page {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: stretch;
+	align-items: center;
+
+	tr, td{
+		margin: 0;
+		padding: 0;
+	}
+
+	thead,
+	thead tr ,
+	thead td {
+		display:flex;
+		width: 100%;
+		height: 60px;
+	}
+
+	thead td {
+		flex-flow: row nowrap;
+		align-items: center;
+
+		#db-menu {
+			margin-left: auto;
+			margin-right: 0;
+		}
+	}
+
+	tfoot {
+		display: none;
+	}
+
+	tbody {
+		width: 100%;
+		height: auto;
+		margin: 0;
+		display: flex;
+		flex: 1 0 auto;
+		& > tr {
+			width: 100%;
+			height: 100%;
+			display: flex;
+			flex-flow: row nowrap;
+			align-items: stretch;
+			justify-content: stretch;
+		}
+		#sidebar {
+			display: flex;
+			width: 400px;
+		}
+
+		#contents {
+			display: flex;
+			flex: 1;
+			height: 100%;
+			width: 100%;
+			border-left: 1px solid $color-gray-lighter;
+		}
+	}
+}
+

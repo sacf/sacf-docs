@@ -1,0 +1,33 @@
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+th {
+	text-align: inherit;
+	vertical-align: top;
+	background-color: $color-brand;
+	color: $color-text;
+}
+tr {
+	+ tr {
+		border-top: 1px solid $color-gray-light;
+	}
+}
+
+td,
+th {
+	padding: 0.7em;
+}
+
+caption {
+	padding-top: 0.75rem;
+	padding-bottom: 0.75rem;
+	color: #868e96;
+	text-align: left;
+	caption-side: bottom;
+}
+
+thead {
+	font-weight: bold;
+}

@@ -1,0 +1,179 @@
+/**
+ * [button description]
+ * @param  {[type]} $icon [description]
+ * @return {[type]}       [description]
+ */
+
+button,
+input[type="submit"],
+input[type="button"],
+input[type="reset"] {
+	@extend %btn;
+}
+
+input,
+button,
+select,
+optgroup,
+textarea {
+	margin: 0;
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}
+
+button,
+input {
+	overflow: visible;
+}
+
+button,
+select {
+	text-transform: none;
+}
+
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+	-webkit-appearance: button;
+}
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+	padding: 0;
+	border-style: none;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+	box-sizing: border-box;
+	padding: 0;
+}
+
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="month"] {
+	-webkit-appearance: listbox;
+}
+
+textarea {
+	overflow: auto;
+	resize: vertical;
+}
+
+fieldset {
+	min-width: 0;
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+
+legend {
+	display: block;
+	width: 100%;
+	max-width: 100%;
+	padding: 0;
+	margin-bottom: 0.5rem;
+	font-size: 1.5rem;
+	line-height: inherit;
+	color: inherit;
+	white-space: normal;
+}
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+	height: auto;
+}
+
+[type="search"] {
+	outline-offset: -2px;
+	-webkit-appearance: none;
+}
+
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+	font: inherit;
+	-webkit-appearance: button;
+}
+
+%btn {
+	display: inline-block;
+	height: 44px;
+	padding: 0 1em;
+
+	margin-right: 1em;
+	&:last-child {
+		margin-right: 0;
+	}
+
+	background-color: $color-primary;
+	color: $color-white;
+
+	@include typo(16, 44);
+	font-family: $body-font;
+	border-radius: 0;
+	border: none;
+	text-align: center;
+	white-space: nowrap;
+	cursor: pointer;
+
+	transition: background-color 200ms, color 200ms;
+
+	&:hover,
+	&:active,
+	&:focus {
+		background-color: $color-gray-lighter;
+		color: $color-gray-dark;
+	}
+}
+
+.btn {
+	@extend %btn;
+
+	&-right {
+		float: right;
+	}
+
+	&-primary {
+		background-color: $color-cta;
+		color: $color-white;
+
+		&:hover,
+		&:active {
+			background-color: $color-white;
+			color: $color-cta;
+		}
+	}
+}
+
+
+.icon-button {
+	padding: 0;
+	text-align: center;
+
+	&:before {
+		position: relative;
+		content: " ";
+		width: 1em;
+		height:40px;
+		margin-right: 0;
+		margin-left: 0;
+		display: inline-block;
+		vertical-align: middle;
+		top: -1px;
+		margin-right: 0;
+		background-image: url(../img/icon-close.svg);
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: auto 1em;
+		background-size: contain;
+	}
+}

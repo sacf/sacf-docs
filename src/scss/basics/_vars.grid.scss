@@ -1,0 +1,17 @@
+/**
+ * Defaults
+ */
+
+$max-width: 900px;
+$max-content-width: 750px;
+$standard-padding: 15px;
+
+$breakpoints: (
+	xs: 320px,
+	sm: 480px,
+	md: 768px,
+	mob: 768px,
+	lg: 1024px,
+	xl: 1200px,
+	xxl: 1440px
+);
