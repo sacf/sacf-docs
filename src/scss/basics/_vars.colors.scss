@@ -5,6 +5,7 @@ $color-black: #111;
 $color-blue: #276cb9;
 $color-green: #2ab927;
 $color-red: #b92727;
+$color-orange: #d08e00;
 
 
 $color-gray-darkest: #111;
@@ -16,9 +17,11 @@ $color-gray-lighter: #eeeeee;
 $color-gray-lightest: #f9f9f9;;
 
 // defaults
+$color-brand-light: #4c8;
 $color-brand: #4c8;
+$color-brand-dark: #36664e;
 $color-warning: $color-red;
-$color-text: $color-black;
+$color-text: $color-gray-darker;
 $color-page-background: $color-white;
 $color-focus: $color-green;
 
@@ -27,3 +30,4 @@ $color-primary: $color-brand;
 $color-em: $color-primary;
 $color-cta: $color-primary;
 $color-gray-medium: $color-gray;
+$color-fragment: $color-orange;

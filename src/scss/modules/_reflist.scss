@@ -1,0 +1,22 @@
+body .reflist{
+	dt, dd{
+		border:none;
+		box-shadow: none;
+	}
+	dt{
+		margin-top: 2rem;
+		text-shadow: none;
+		border-bottom: 1px solid $color-brand;
+		background: transparent;
+	}
+	dd{
+		background: none;
+		p{
+			padding: 0.4em 0.5em;
+			margin-bottom: 0;
+		}
+		p:nth-child(even){
+			background-color: rgba($color-gray-light, 0.1);
+		}
+	}
+}

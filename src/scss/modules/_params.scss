@@ -1,0 +1,27 @@
+.params{
+	table.params{
+		tr{
+			border: none;
+		}
+		td{
+			padding: 0.4em 0.5em;
+			
+			&.paramtype{
+				padding-left: 1em;
+			}
+
+			&.paramname{
+				@include code-font();
+				padding-top: 0.7rem;
+				color: $color-brand-dark;
+			}
+		}
+
+		tr:nth-child(odd){
+			td{
+				
+				background-color: rgba($color-gray-light, 0.1);
+			}
+		}
+	}
+}

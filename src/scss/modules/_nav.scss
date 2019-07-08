@@ -19,13 +19,30 @@
 				color: #fff;
 				text-shadow: none;
 				transition: color .3s;
+
+				span.sub-arrow{
+					border-color: #fff transparent transparent transparent;
+					transition: border-color .3s
+				}
+
+				&:hover{
+					color: $color-text;
+					span.sub-arrow{
+						border-color:$color-text transparent transparent transparent;
+					}
+					
+				}
+
+				
 			}
 
 			ul {
+				border-radius: 3px !important;
+				box-shadow: 0 0 3px 0 rgba(0,0,0,0.2);
 				a{
 					color: $color-gray-darkest;
 					&:hover{
-						color: $color-gray-darker;
+						color: $color-brand;
 					}
 				}
 			}
@@ -43,18 +60,20 @@
 		background: #fff;
 		width: 180px;
 		height: 26px;
+		border-radius: 3px 0 0 3px;
+		// border: 1px solid $color-brand-dark;
+		border-right: none;
+		border:none;
 		&>img{
 			display:none;
 		}
 	}
 	#MSearchField{
-		background: #fff;
 		margin: 0;
 		height: 26px;
 		display:inline-block; 
 		width: 100%;
-
-
+		background: none;
 	}
 	.right{
 		position: absolute;
@@ -63,5 +82,55 @@
 		width: 20px; 
 		height: 26px; 
 		background: #fff;
+		border-radius: 0 3px 3px 0;
+		// border: 1px solid $color-brand-dark;
+		border-left: none;
+		border:none;
+	}
+}
+
+
+div.navpath{
+	background: $color-brand-dark;
+
+	ul{
+		border:none;
+		background: none;
+		width: $max-width;
+		margin: 0 auto;
+		li.navelem{
+			background:none;
+			position: relative;
+			padding-right: 20px;
+			height: 30px;
+			overflow:hidden;
+			&:after, &:before{
+				content: '';
+				display:block;
+				width: 2px; 
+				height: 20px;
+				background-color: #fff;
+				position: absolute;
+				right: 6px;
+				
+			}
+			&:before{
+				top: -3px;
+				transform: rotateZ(-30deg);
+			}
+			&:after{
+				bottom: -3px;
+				transform: rotateZ(30deg);
+			}
+
+			a, b{
+				letter-spacing: 0.04em;
+				text-shadow: none;
+				color: #fff;
+			}
+			a:hover{
+				color: $color-brand-light;
+			}
+		}
 	}
 }

@@ -144,7 +144,7 @@ module.exports = {
 
 	// All tasks above are available (css, js, images and svg)
 	combinedTasks: {
-		dist: ['es6', 'js', 'images', 'svg', 'css', 'copy', 'clean', 'docs'],
+		dist: ['es6', 'js', 'images', 'svg', 'css', 'clean', 'docs', 'copy', ],
 		default: [['dist', 'watch']]
 	},
 

@@ -1,0 +1,35 @@
+body table.classindex{
+	margin: 0;
+	width: 100%;
+
+	tr{
+		width: 100%;
+	}
+
+	td{
+		padding: 0.5em 0.5em;
+		table{
+			border-spacing: 0;
+			td{
+				padding: 0;
+			}
+		} 
+	}
+
+	div.ah{
+		background: none;
+		border:none;
+		border-radius: 0;
+		box-shadow: none; 
+		color: $color-brand-dark;
+		padding: 0;
+		text-align: center;
+		text-transform: uppercase;
+	}
+
+	tr:nth-child(odd){
+		td{
+			// background-color: rgba($color-gray-light, 0.6);
+		}
+	}
+}

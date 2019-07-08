@@ -1,0 +1,34 @@
+body div.directory{
+	border:none;
+	tr{
+		border: none;
+		padding: 0;
+		&.even{
+			background-color: transparent;
+		}
+	}
+	td{
+		&.entry, &.desc{
+			padding: 0.5em 0.5em;
+		}
+		
+		&.desc{
+			border:none;
+		}
+
+		.icona, .arrow{
+			height: 16px;
+		}
+
+		.icona .icon{
+			background-color: $color-brand-dark;
+		}
+	}
+	tr:nth-child(odd){
+		td{
+			
+			background-color: rgba($color-gray-light, 0.1);
+		}
+	}
+		
+}

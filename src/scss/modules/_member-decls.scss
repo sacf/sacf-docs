@@ -1,0 +1,36 @@
+.memberdecls{
+	tr{
+		border: none;
+
+		&[class^='separator:'], 
+		&[class^='memdesc:']{
+			display:none !important;
+		}
+
+		td{
+			padding: 0.5em 0;
+		}
+	}
+
+	.memItemLeft{
+		display:none;
+	}
+
+	.memItemRight{
+		margin: 0;
+		
+		@include code-font();
+	}
+	tr td{
+		background-color: transparent;
+	}
+	tr:nth-child(odd){
+		td{
+		}
+	}
+	.heading{
+		td{
+			padding: 0;
+		}
+	}
+}

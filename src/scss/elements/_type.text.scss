@@ -3,7 +3,7 @@
  */
 
 html {
-	font-size: 14px;
+	font-size: 16px;
 }
 
 body {
@@ -19,6 +19,12 @@ body {
 	// 	-webkit-font-smoothing: antialiased;
 	// 	-moz-osx-font-smoothing: grayscale;
 	// 	-moz-font-smoothing: grayscale;
+}
+
+body, table, div, p, dl{
+	font-family: $body-font;
+	font-size: 1rem;
+	line-height: 1.5;
 }
 
 h1,
@@ -55,10 +61,11 @@ p {
 	margin-bottom: .7em;
 }
 
-a {
-	color: $color-em;
+a, .contents a{
+	color:$color-brand;
 	text-decoration: none;
 	background-color: transparent;
+	transition: color .3s;
 	-webkit-text-decoration-skip: objects;
 
 	&:not([href]):not([tabindex]),
@@ -70,6 +77,47 @@ a {
 	&:not([href]):not([tabindex]):focus {
 		outline: 0;
 	}
+
+	&:visited{
+		color:$color-brand;
+		transition: color .3s;
+		&:hover{
+			color: $color-text;
+		}
+	}
+	&:hover{
+		color: $color-text;
+	}
+}
+
+body code{
+	@include code-font();
+	display:inline-block;
+	padding: 0.1em 0.3em;
+}
+
+body div.fragment, 
+body pre.fragment{
+	border-color: rgba($color-fragment, 0.4);
+	background-color: rgba($color-fragment, 0.03);
+	padding: 0.5rem;
+	@include code-font();
+	line-height: 1.3rem;
+	color: $color-gray-darker;
+	.line{
+		@include code-font();
+		padding: 0.2rem;
+		text-indent: 0;
+		color: $color-gray-darker;
+	}
+	
+}
+
+body span.mlabel{
+	border:none;
+	background-color: $color-brand-dark;
+	text-shadow: none;
+	padding: 2px 4px;
 }
 
 hr {

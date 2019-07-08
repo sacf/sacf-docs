@@ -1,0 +1,74 @@
+.mem{
+	&title{
+		border:none;
+		padding: 0;
+		background:none;
+		color: $color-brand;
+		font-weight: bold;
+		.permalink a{
+			color: #fff;
+			position: relative;
+			padding-right: 10px;
+			border:none;
+			background: none;
+			
+			&:before{
+				content: '#';
+				color: rgba($color-brand-light, 0.5);
+				transition: color .3s;
+				@include typo(24);
+				display:block;
+				left: 0;
+				top: 7px;
+				width: 100%;
+				height: 100%;
+				position: relative;
+			}
+			&:hover{
+				color: #fff;
+				&:before{
+					color: $color-brand-dark;
+				}
+			}
+		}
+	}
+
+	&proto{
+		box-shadow: none;
+		// border-color: $color-gray-light;
+		border:none;
+		background:$color-gray-lightest;
+		table.memname{
+			margin: 0;
+			width: auto;
+			@include code-font();
+			
+			tr{
+				border:none;
+			}
+			td{
+				padding: 0.2em 0.4em 0 0;
+				border: none;
+				color: $color-gray;
+				&.memname{
+					padding-left: 1em;
+					color: $color-text; 
+				}
+				&.paramtype{
+					display:none;
+				}
+			}
+		}
+	}
+	&doc{
+		box-shadow: none;
+		background: none;
+		// border-color: $color-gray-light;
+		padding: 1em 0;
+		border:none;
+
+		dl.params, dl.return{
+			margin-top: 2rem;
+		}
+	}
+}
