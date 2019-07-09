@@ -1,9 +1,79 @@
+
+div.qindex{
+	background-color: transparent;
+	border:none;
+	display:flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	color: rgba($color-gray, 0.5);
+	a{
+		display:inline-block;
+		min-width: 20px;
+	}
+}
+
 body table.classindex{
 	margin: 0;
 	width: 100%;
-
-	tr{
+	display:flex;
+	tbody{
+		display:flex;
 		width: 100%;
+		flex-flow: column nowrap;
+	}
+	tr{
+		display:flex;
+		width: 100%;
+		min-height: 40px;
+		justify-content: space-between;
+		border:none;
+		&:nth-child(odd){
+			td{
+				background-color: rgba($color-gray-light, 0.1);
+			}
+		}
+		td{
+			display:flex;
+			width: 48%;
+			
+			table, tr, table tr td{
+				background-color: #fff;
+				display:flex;
+				width: 100%;
+				padding: 0;
+				.ah{
+					height: 31px; 
+					margin-top: auto;
+					margin-bottom: 0;
+				}
+			}
+
+			&[valign="top"]{
+				a{
+					padding-right: 2px;
+				}
+			}
+
+			&[rowspan="2"]{
+				position: relative;
+				table{
+					height: 200%;
+					position: absolute;
+					left: 0;
+					top: 0;
+					tbody, tr, td{
+						height: 100%;
+						
+						td{
+							background-color: #fff;
+							border-bottom: 2px solid $color-brand;
+						}
+					}
+				}
+			}
+
+			
+		}
 	}
 
 	td{
@@ -27,9 +97,4 @@ body table.classindex{
 		text-transform: uppercase;
 	}
 
-	tr:nth-child(odd){
-		td{
-			// background-color: rgba($color-gray-light, 0.6);
-		}
-	}
 }
