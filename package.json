@@ -1,5 +1,5 @@
 {
-  "name": "yeah-parent-theme-docs",
+  "name": "sacf-docs",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,7 +8,8 @@
     "dist": "gulp dist --env dist",
     "docs": "doxygen Doxyfile",
     "premkdocs": "rm -rf ./htdocs",
-    "mkdocs": "npm run dist; npm run docs",
+	"mkdocs": "npm run dist; npm run docs",
+	"postmkdocs": "rm .htdocs/search/search.css; cp ./public/css/search.css ./htdocs/search/",
     "cleanup": "rm -rf node_modules",
     "newdocs": "npm install; npm run mkdocs; npm run cleanup"
   },

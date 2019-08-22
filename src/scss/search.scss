@@ -1,0 +1,273 @@
+//This is a modified version of the standard search box. 
+
+@import "basics/vars.colors";
+@import "basics/font.source-sans-pro";
+@import "basics/vars.fonts";
+@import "basics/mixins";
+
+#FSearchBox {
+	float: left;
+}
+
+#MSearchBox {
+	white-space : nowrap;
+	float: none;
+	margin-top: 8px;
+	right: 0px;
+	width: 170px;
+	height: 24px;
+	z-index: 102;
+}
+
+#MSearchBox .left
+{
+	display:block;
+	position:absolute;
+	left:10px;
+	width:20px;
+	height:19px;
+	background:url('search_l.png') no-repeat;
+	background-position:right;
+}
+
+#MSearchSelect {
+	display:block;
+	position:absolute;
+	width:20px;
+	height:19px;
+}
+
+.left #MSearchSelect {
+	left:4px;
+}
+
+.right #MSearchSelect {
+	right:5px;
+}
+
+#MSearchField {
+	display:block;
+	position:absolute;
+	height:19px;
+	border:none;
+	width:115px;
+	margin-left:20px;
+	padding-left:4px;
+	color: #909090;
+	outline: none;
+	-webkit-border-radius: 0px;
+}
+
+#FSearchBox #MSearchField {
+	margin-left:15px;
+}
+
+#MSearchBox .right {
+	display:block;
+	position:absolute;
+	right:10px;
+	top:8px;
+	width:20px;
+	height:19px;
+	background-position:left;
+}
+
+#MSearchClose {
+	display: none;
+	position: absolute;
+	top: 4px;
+	background : none;
+	border: none;
+	margin: 0px 4px 0px 0px;
+	padding: 0px 0px;
+	outline: none;
+}
+
+.left #MSearchClose {
+	left: 6px;
+}
+
+.right #MSearchClose {
+	right: 2px;
+}
+
+.MSearchBoxActive #MSearchField {
+	color: #000000;
+}
+
+/*---------------- Search filter selection */
+
+#MSearchSelectWindow {
+	display: none;
+	position: absolute;
+	left: 0; top: 0;
+	border: 1px solid #90A5CE;
+	background-color: #F9FAFC;
+	z-index: 10001;
+	padding-top: 4px;
+	padding-bottom: 4px;
+
+}
+
+.SelectItem {
+	font-family: $body-font;
+	font-size: 16px;
+	padding-left:  2px;
+	padding-right: 12px;
+	border: 0px;
+}
+
+span.SelectionMark {
+	margin-right: 4px;
+	font-family: $monospace-font;
+	outline-style: none;
+	text-decoration: none;
+}
+
+a.SelectItem {
+	display: block;
+	outline-style: none;
+	text-decoration: none;
+	padding-left:   6px;
+	padding-right: 12px;
+}
+
+a.SelectItem:focus,
+a.SelectItem:active {
+	outline-style: none;
+	text-decoration: none;
+}
+
+a.SelectItem:hover {
+	outline-style: none;
+	text-decoration: none;
+	cursor: pointer;
+	display: block;
+}
+
+/*---------------- Search results window */
+
+iframe#MSearchResults {
+	width: 60ex;
+	height: 15em;
+}
+
+#MSearchResultsWindow {
+	display: none;
+	position: absolute;
+	left: 0; top: 0;	
+	background-color: #fff;
+	border-radius: 3px;
+	border: 1px solid #bbb;
+	box-shadow: 0 0 3px 0 rgba(0,0,0,.2);
+	z-index:10000;
+
+	a{
+		color: $color-brand;
+	}
+}
+
+/* ----------------------------------- */
+
+
+#SRIndex {
+	clear:both; 
+	padding-bottom: 15px;
+}
+
+.SRPage .SREntry {
+	padding: 3px 7px;
+	a{
+		color: $color-brand;
+		&:hover{
+			color: $color-brand-dark;
+		}
+	}
+}
+
+body.SRPage {
+	margin: 0;
+	padding: 0;
+	font-family: $body-font;
+	font-size: 1rem;
+	line-height: 1.5;
+}
+
+.SRChildren {
+	padding-left: 3ex; padding-bottom: .5em 
+}
+
+.SRPage .SRChildren {
+	display: none;
+}
+
+.SRSymbol {
+	font-weight: bold; 
+	text-decoration: none;
+	outline: none;
+}
+
+a.SRScope {
+	display: block;
+	text-decoration: none;
+	outline: none;
+}
+
+a.SRSymbol:focus, a.SRSymbol:active,
+a.SRScope:focus, a.SRScope:active {
+	text-decoration: underline;
+}
+
+span.SRScope {
+	padding-left: 4px;
+}
+
+.SRPage .SRStatus {
+	padding: 2px 5px;
+	font-style: italic;
+}
+
+.SRResult {
+	display: none;
+	&:nth-child(odd){
+		background-color: $color-gray-lightest;
+	}
+}
+
+DIV.searchresults {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+/*---------------- External search page results */
+
+.searchresult {
+	background-color: #F0F3F8;
+}
+
+.pages b {
+	color: white;
+	padding: 5px 5px 3px 5px;
+	background-image: url("../tab_a.png");
+	background-repeat: repeat-x;
+	text-shadow: 0 1px 1px #000000;
+}
+
+.pages {
+	line-height: 17px;
+	margin-left: 4px;
+	text-decoration: none;
+}
+
+.hl {
+	font-weight: bold;
+}
+
+#searchresults {
+	margin-bottom: 20px;
+}
+
+.searchpages {
+	margin-top: 10px;
+}
+
