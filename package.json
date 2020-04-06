@@ -8,8 +8,8 @@
     "dist": "gulp dist --env dist",
     "docs": "doxygen Doxyfile",
     "premkdocs": "rm -rf ./htdocs",
-	"mkdocs": "npm run dist; npm run docs",
-	"postmkdocs": "rm .htdocs/search/search.css; cp ./public/css/search.css ./htdocs/search/",
+    "mkdocs": "npm run dist; npm run docs",
+    "postmkdocs": "rm .htdocs/search/search.css; cp ./public/css/search.css ./htdocs/search/",
     "cleanup": "rm -rf node_modules",
     "newdocs": "npm install; npm run mkdocs; npm run cleanup"
   },
@@ -17,7 +17,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "mj-gulp-workflow": "^2.0.6"
+    "mj-gulp-workflow": "^2.3.1"
   },
   "dependencies": {
     "child_process": "^1.0.2"

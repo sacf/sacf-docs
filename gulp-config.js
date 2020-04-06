@@ -1,106 +1,8 @@
-const imagemin = require('gulp-imagemin')
-const browserlist = ['> 0.1%']
-
 module.exports = {
-	css: {
-		scss: {
-			config: {
-				outputStyle: 'compressed' // nested, compact, expanded and compressed are available options
-			}
-		},
-
-		sourcemaps: {
-			enabled: 'dev'
-		},
-
-		autoprefixer: {
-			enabled: true,
-			config: {
-				browserlist: browserlist
-			}
-		},
-
-		cleanCss: {
-			enabled: true,
-			config: {
-				inline: ["none"],
-				compatibility: 'ie8'
-			}
-		}
-	},
-
-	js: {
-		sourcemaps: {
-			enabled: 'dev'
-		},
-		browserify: {
-			enabled: false
-		},
-
-		babeljs: {
-			enabled: true,
-			config: {
-				minified: true,
-				comments: false
-			}
-		}
-	},
-
-	es6: {
-		sourcemaps: {
-			enabled: 'dev'
-		},
-		browserify: {
-			enabled: true
-		},
-
-		babeljs: {
-			enabled: true,
-			config: {
-				minified: true,
-				presets: [
-					[
-						'@babel/preset-env',
-						{
-							targets: {
-								browsers: browserlist
-							}
-						}
-					]
-				]
-			}
-		}
-	},
-
+	
 	clean: {
 		enabled: 'dist',
 		paths: ['./htdocs/**/*.map', './src/tmp']
-	},
-
-	images: {
-		imagemin: {
-			enabled: true,
-			config: [
-				imagemin.gifsicle({ interlaced: true }),
-				imagemin.jpegtran({ progressive: true }),
-				imagemin.optipng({ optimizationLevel: 5 }),
-				imagemin.svgo({ plugins: [{ removeViewBox: true }] })
-			]
-		}
-	},
-
-	svg: {
-		svgmin: {
-			enabled: true,
-			config: {}
-		}
-	},
-
-	favicons: {
-		enabled: true,
-		themeColor: '#cafe23',
-		iconsPath: './',
-		appName: 'FoobarBaz'
 	},
 
 	paths: {
@@ -138,7 +40,7 @@ module.exports = {
 		},
 		docsWatch: {
 			0: ['./public/**/*.*',
-				'../wp-smart-acf-2/**/*.*']
+				'../sacf/**/*.*']
 		}
 	},
 
